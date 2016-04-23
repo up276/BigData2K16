@@ -2,7 +2,7 @@ import os
 import sys
 import re
 
-new_cols = ['st_month','st_day','st_year','st_hour','end_month','end_day','end_year','end_hour']
+new_cols = ['st_key','st_month','st_day','st_year','st_hour','end_month','end_day','end_year','end_hour']
 final_cols = ['tripduration', 'starttime', 'stoptime', 'start station id', \
               'start station name', 'start station latitude', \
         'start station longitude', 'end station id', 'end station name', 'end station latitude', \
@@ -27,6 +27,6 @@ for l in sys.stdin:
     start_key = "".join(zero_pad(i) for i in start)
     end = split_date(l[2])
     end.extend(l)
-    start.extend(l)
+    start.extend(end)
     start.insert(0,start_key)
     print(','.join(start))
