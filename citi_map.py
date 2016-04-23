@@ -29,4 +29,4 @@ for l in sys.stdin:
     end.extend(l)
     start.extend(end)
     start.insert(0,start_key)
-    print(','.join(start))
+    sys.stdout.write(','.join(start))
