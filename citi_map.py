@@ -2,7 +2,7 @@ import os
 import sys
 import re
 
-new_cols = ['st_key','st_month','st_day','st_year','st_hour','end_month','end_day','end_year','end_hour']
+new_cols = ['YR--MODAH','st_month','st_day','st_year','st_hour','end_month','end_day','end_year','end_hour']
 final_cols = ['tripduration', 'starttime', 'stoptime', 'start station id', \
               'start station name', 'start station latitude', \
         'start station longitude', 'end station id', 'end station name', 'end station latitude', \
