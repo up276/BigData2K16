@@ -2,7 +2,7 @@ import os
 import sys
 import re
 
-new_cols = ['st_month','st_day','st_year','st_hour','st_min','end_month','end_day','end_year','end_hour','end_min']
+new_cols = ['st_month','st_day','st_year','st_hour','end_month','end_day','end_year','end_hour']
 final_cols = ['tripduration', 'starttime', 'stoptime', 'start station id', \
               'start station name', 'start station latitude', \
         'start station longitude', 'end station id', 'end station name', 'end station latitude', \
@@ -10,7 +10,7 @@ final_cols = ['tripduration', 'starttime', 'stoptime', 'start station id', \
 new_cols.extend(final_cols)
 
 def split_date(st):
-    return filter(None, re.split("[ :/]+",st))
+    return filter(None, re.split("[ :/]+",st))[:-1]
 
 def zero_pad(x):
     if len(str(x))==1:
@@ -24,7 +24,9 @@ for l in sys.stdin:
     if 'tripduration' in l:
         continue
     start = split_date(l[1])
+    start_key = "".join(zero_pad(i) for i in start)
     end = split_date(l[2])
     end.extend(l)
-    start.extend(end)
-    print(','.join(end))
+    start.extend(l)
+    start.insert(0,start_key)
+    print(','.join(start))
