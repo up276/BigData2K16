@@ -12,13 +12,19 @@ new_cols.extend(final_cols)
 def split_date(st):
     return filter(None, re.split("[ :/]+",st))
 
+def zero_pad(x):
+    if len(str(x))==1:
+        return "0"+str(x)
+    else:
+        return str(x)
+
 print(','.join(new_cols))
 for l in sys.stdin:
     l = l.split(',')
     if 'tripduration' in l:
         continue
     start = split_date(l[1])
-    end = split_date(l[2]) 
+    end = split_date(l[2])
     end.extend(l)
     start.extend(end)
     print(','.join(end))
