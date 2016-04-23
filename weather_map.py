@@ -52,6 +52,6 @@ for line in sys.stdin:
                 row.append(val)
             if k=='TEMP':
                 temp_bucket = check_bins(val)
-                row.insert(0,temp_bucket)
-        print(','.join(row))
-        print('\n')
+                row.insert(1,temp_bucket)
+        if len(row)>0:
+            print(','.join(row))
