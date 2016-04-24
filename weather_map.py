@@ -35,7 +35,7 @@ def check_bins(v):
 last_date ="" 
 for line in sys.stdin:
 	row = []
-        for k in cols_vus:
+	for k in cols_vus:
             s = cols_vus[k][0]
             e = cols_vus[k][1]
             val = line[s:e].strip()
@@ -53,5 +53,5 @@ for line in sys.stdin:
             if k=='TEMP':
                 temp_bucket = check_bins(val)
                 row.insert(1,temp_bucket)
-        if len(row)>0:
-            print(','.join(row))
+	if len(row)>0:
+		print(','.join(row))
