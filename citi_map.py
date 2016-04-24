@@ -2,7 +2,7 @@ import os
 import sys
 import re
 
-new_cols = ['YR--MODAH','st_month','st_day','st_year','st_hour','end_month','end_day','end_year','end_hour']
+new_cols =['YR--MODAH','st_year','st_month','st_day','st_hour','end_year','end_month','end_day','end_hour']
 final_cols = ['tripduration', 'starttime', 'stoptime', 'start station id', \
               'start station name', 'start station latitude', \
         'start station longitude', 'end station id', 'end station name', 'end station latitude', \
@@ -10,7 +10,10 @@ final_cols = ['tripduration', 'starttime', 'stoptime', 'start station id', \
 new_cols.extend(final_cols)
 
 def split_date(st):
-    return filter(None, re.split("[ :/]+",st))[:-1]
+    split =  filter(None, re.split("[ :/]+",st))[:-1]
+    so = {'month':0,'day':1,'year':2,'hour':3}
+    reorders =[split[so['year']],split[so['month']],split[so['day']],split[so['hour']]]
+    return reorders
 
 def zero_pad(x):
     if len(str(x))==1:
