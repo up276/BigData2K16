@@ -14,9 +14,9 @@ def split_date(st):
    # print(".") 
    # print(split) 
     so = {'month':0,'day':1,'year':2,'hour':3}
-    yr = split[2]
-    reorders =[yr,split[so['month']],split[so['day']],split[so['hour']]]
-    return reorders
+   # yr = split[2]
+   # reorders =[yr,split[so['month']],split[so['day']],split[so['hour']]]
+    return split
 
 def zero_pad(x):
     if len(str(x))==1:
@@ -27,6 +27,7 @@ def zero_pad(x):
 print(','.join(new_cols))
 for l in sys.stdin:
     l = l.split(',')
+    #if 'starttime' in l:
     if any("tripduration" in w for w in l):
         continue
     start = split_date(l[1])
@@ -35,4 +36,6 @@ for l in sys.stdin:
     end.extend(l)
     start.extend(end)
     start.insert(0,start_key)
-    sys.stdout.write(','.join(start))
+    if len(start)!= 24:
+        print(len(start))
+        print((start))
