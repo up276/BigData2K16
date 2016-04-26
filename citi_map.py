@@ -36,8 +36,7 @@ pivot_cols = {'bikeid':0,
         'gender':9}
 cf =['YR--MODAHR','year','month','day','hour','bikeid','birth_year','usertype',\
         'station_id','latitude','longitude','station_name','launch_time'\
-        ,'tripduration','usertype','gender']
-          'launch_time','station_id','latitude','longitude','bikeid','usertype','birth_year','gender']
+        ,'tripduration','gender']
 
 def split_date(st):
     split =  filter(None, re.split("[ :/]+",st))[:4]
