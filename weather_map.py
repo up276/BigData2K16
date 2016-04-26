@@ -40,6 +40,16 @@ for line in sys.stdin:
             e = cols_vus[k][1]
             val = line[s:e].strip()
             val = re.sub(r'\*+',"",val)
+            if k == 'PCP01':
+                rain = ""
+                if val=='PCP01':
+                    rain="RAIN"
+                elif val > 0:
+                    rain="1"
+                elif val==0:
+                    rain="0"
+                row.insert(0,rain)
+                row.append(val)
             if k == 'YR--MODAHRMN':
                 # only one line per date --> hour level
                 if val[:-2]==last_date:
