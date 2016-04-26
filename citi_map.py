@@ -24,17 +24,17 @@ rd = {'bikeid': 11,
  'tripduration': 0,
  'usertype': 12}
 
-pivot_cols = {'bikeid':0,
-        'birth year':1,
-        'station id':3,
-        'latitude':4,
-        'longitude':5,
-        'station name':6,
-        'launch time':7,
-        'tripduration':8,
-        'usertype':2,
-        'gender':9}
-cf =['YR--MODAHR','year','month','day','hour','bikeid','birth_year','usertype',\
+pivot_cols = {'trip_type':0,'bikeid':1,
+        'birth year':2,
+        'station id':4,
+        'latitude':5,
+        'longitude':6,
+        'station name':7,
+        'launch time':8,
+        'tripduration':9,
+        'usertype':3,
+        'gender':10}
+cf =['YR--MODAHR','year','month','day','hour','trip_type','bikeid','birth_year','usertype',\
         'station_id','latitude','longitude','station_name','launch_time'\
         ,'tripduration','gender']
 
@@ -54,7 +54,7 @@ def zero_pad(x):
         return str(x)
 
 def get_l_start(l):
-    l_start =[l[rd['bikeid']],l[rd['birth year']],l[rd['usertype']],\
+    l_start =['trip_start',l[rd['bikeid']],l[rd['birth year']],l[rd['usertype']],\
             l[rd['start station id']],l[rd['start station latitude']],\
             l[rd['start station longitude']],l[rd['start station name']],\
             l[rd['starttime']],l[rd['tripduration']],\
@@ -62,7 +62,7 @@ def get_l_start(l):
     return l_start
 
 def get_l_end(l):
-    l_end =[l[rd['bikeid']],l[rd['birth year']],l[rd['usertype']],\
+    l_end =['trip_end',l[rd['bikeid']],l[rd['birth year']],l[rd['usertype']],\
             l[rd['end station id']],l[rd['end station latitude']],\
             l[rd['end station longitude']],l[rd['end station name']],\
             l[rd['stoptime']],l[rd['tripduration']],\
