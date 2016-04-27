@@ -61,8 +61,8 @@ for line in sys.stdin:
                 row.insert(0,val[:-2])
             else:
                 row.append(val)
-            #if k=='TEMP':
-            #    temp_bucket = check_bins(val)
-            #    row.insert(1,temp_bucket)
+            if k=='TEMP':
+                temp_bucket = check_bins(val)
+                row.insert(1,temp_bucket)
 	if len(row)>0:
 		print(','.join(row))
