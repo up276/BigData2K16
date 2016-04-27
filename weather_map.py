@@ -50,7 +50,7 @@ for line in sys.stdin:
                     rain = "1"
                 elif float(val)==0:
                     rain = "0"
-                row.insert(0,rain)
+                row.insert(1,rain)
             if k == 'YR--MODAHRMN':
                 # only one line per date --> hour level
                 if val[:-2]==last_date:
