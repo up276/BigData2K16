@@ -44,12 +44,13 @@ for line in sys.stdin:
                 rain = ""
                 if val=='PCP01':
                     rain="RAIN"
-                elif val > 0:
-                    rain="1"
-                elif val==0:
-                    rain="0"
+                elif val == "":
+                    rain = ""
+                elif float(val) > 0:
+                    rain = "1"
+                elif float(val)==0:
+                    rain = "0"
                 row.insert(0,rain)
-                row.append(val)
             if k == 'YR--MODAHRMN':
                 # only one line per date --> hour level
                 if val[:-2]==last_date:
