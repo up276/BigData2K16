@@ -18,4 +18,4 @@ for line in sys.stdin:
         current_key = key
         total_count = count
 
-print "%s,%d" %(current_key, total_count)
+print("%s,%d" %(current_key, total_count))

@@ -5,15 +5,14 @@ for row in sys.stdin:
     splits=row.split(",")
 
  	# Change according to correct data location
-    station_id = splits[19]
-    action = splits[15] # pickup or dropoff
+    station_id = splits[20]
+    action = splits[16] # pickup or dropoff
     rain = splits[1] # rain or not
-    temperature = splits[9]
-    hour = splits[14]
-    latitude =  splits[20]
-    longitude =  splits[21]
+    temperature = splits[3]
+    hour = splits[15]
+    latitude =  splits[21]
+    longitude =  splits[22]
 
     key = station_id+","+latitude+","+longitude+","+action+","+rain+","+temperature+","+hour
-    count=1
-	
-    print "%s\t%d" %(key, count)
+    count=1	
+    print("%s\t%d"%(key, count))
