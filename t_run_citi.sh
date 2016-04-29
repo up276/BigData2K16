@@ -15,4 +15,4 @@ c12="data/201512-citibike-tripdata.csv"
 if [ -f $file ] ; then
     rm $file
 fi
-cat $c1 $c2 $c3 $c4 $c5 $c6 $c7 $c8 $c9 $c10 $c11 $c12| python citi_map.py >> $file 
+cat $c1 $c2 $c3 $c4 $c5 $c6 $c7 $c8 $c9 $c10 $c11 $c12| python citi_map_test.py
