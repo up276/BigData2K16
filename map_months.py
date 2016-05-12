@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import sys
+from datetime import datetime
 
 for row in sys.stdin:
     row = row.strip()
@@ -14,8 +15,18 @@ for row in sys.stdin:
     latitude =  splits[21]
     longitude =  splits[22]
     station_name =  splits[23]
+
+    month =  (splits[13])
+    year =  (splits[12])
+
+    day =  (splits[14])
+
+    if year=='year':
+	wkday = 'wkday'
+    else:
+	wkday =  str(datetime(int(year),int(month),int(day)).weekday())
     gender =  splits[26]
 
-    key = station_id+","+station_name+","+latitude+","+longitude+","+action+","+rain+","+temperature+","+hour+","+gender
+    key = wkday+","+station_id+","+station_name+","+latitude+","+longitude+","+action+","+rain+","+temperature+","+","+gender
     count=1	
     print("%s\t%d"%(key, count))
