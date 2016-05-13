@@ -6,7 +6,7 @@ for line in sys.stdin:
         citi_v = ""
         line = line.strip()
 	splits = line.split(",")
-        if splits[0]=="YR--MADAHR" or splits[0]=="YR--MODAH":
+        if splits[0]=="YR--MADAHR" or splits[0]=="YR--MODAHR":
         	#print "first condition"
 		continue
         if len(splits) == 12:

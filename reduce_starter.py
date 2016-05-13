@@ -29,11 +29,11 @@ for line in sys.stdin:
     if CurrentKeyVal == key:
          value = valuelist.split(",")
 
-	 if(int(value[0])==1) :
+	 if(int(value[0])==2) :
 		   #print "%s?%s" % (key,valuelist)
 		   weather_data.append(key+"?"+valuelist)
 	 else:
 		   #print "%s()%s" % (key,valuelist)
 		   citi_data.append(key+"?"+valuelist)
 
-PrintJoinedRecords(CurrentKeyVal,citi_data,weather_data)
+PrintJoinedRecords(CurrentKeyVal,weather_data,citi_data)
