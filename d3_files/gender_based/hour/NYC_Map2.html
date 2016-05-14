@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+
+<style>
+path {
+  stroke: white;
+  stroke-width: 0.25px;
+  fill: grey;
+}
+
+body {
+    background-image: url("");
+    background-size: 1300px 700px;
+    background-repeat: no-repeat ;
+    
+}
+
+</style>
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://datamaps.github.io/scripts/datamaps.world.min.js?v=1"></script>
+</head>
+<body > 	
+<table>
+<div class="ui">
+  <div>
+   <th> <label> Gender </label> </th>
+   <th>   <select id="gender">
+        <option  selected="selected" value=1>Male</option>
+	<option value=2>Female</option>
+   </select> </th>
+  </div>
+  <tr>
+  <div>
+  <th>  <label>Temperature?</label> </th>
+  <th>  <select id="temperature_index">
+     <option value="all_temp">---</option>
+     <option value="very_low_temp"> Very Low  (less than 30) </option>
+     <option value="mod_low_temp"> moderate low (30 to 45)</option>
+     <option selected="selected" value="medium_temp"> medium (45 to 60)</option>
+     <option value="mod_high_temp">moderate high (60 to 75)</option>
+     <option value="very_high_temp"> very high (more than 75) </option>
+   </select> </th>
+  </div>
+  </tr>
+  <tr>
+  <div>
+   <th><label> Rain?</label></th>
+   <th><select id="rain_index">
+     <option value="rain_all">---</option>
+     <option value="rain_yes">Yes</option>
+     <option selected="selected" value="rain_no">No</option>
+   </select> </th>
+  </div>
+ </tr>
+  <tr>
+  <div>
+   <th><label> Trip Type?</label></th>
+   <th><select id="TripType">
+     <option value="Tritype_all">---</option>
+     <option selected="selected" value="TripStart">Trip starts</option>
+     <option value="TripEnd">Trip ends</option>
+   </select> </th>
+  </div>
+  </tr>
+  <tr>
+  <div>
+  <th> <label> Hour of the day?</label> </th>
+  <th>   <select id="hour_day">
+        <option value="hr_all">---</option>
+        <option value="hr_1">1</option>
+	<option value="hr_2">2</option>
+	<option value="hr_3">3</option>
+	<option value="hr_4">4</option>
+	<option value="hr_5">5</option>
+	<option value="hr_6">6</option>
+	<option value="hr_7">7</option>
+	<option value="hr_8">8</option>
+	<option value="hr_9">9</option>
+	<option selected="selected" value="hr_10">10</option>
+	<option value="hr_11">11</option>
+	<option value="hr_12">12</option>
+	<option value="hr_13">13</option>
+	<option value="hr_14">14</option>
+	<option value="hr_15">15</option>
+	<option value="hr_16">16</option>
+	<option value="hr_17">17</option>
+	<option value="hr_18">18</option>
+	<option value="hr_19">19</option>
+	<option value="hr_20">20</option>
+	<option value="hr_21">21</option>
+	<option value="hr_22">22</option>
+	<option value="hr_23">23</option>
+	<option value="hr_24">24</option>
+        <li><a href="#">Home</a></li>
+   </select> </th>
+   <th> <label> Day of the week?</label> </th>
+   <th>   <select id="week_day">
+        <option selected="selected" value="day_all">---</option>
+        <option value=0>Sunday</option>
+	<option value=1>Monday</option>
+	<option value=2>Tuesday</option>
+	<option value=3>Wedenesday</option>
+	<option value=4>Thursday</option>
+	<option value=5>Friday</option>
+	<option value=6>Saturday</option>
+   </select> </th>
+
+  </div>
+  </tr>
+  <tr>
+  <th>
+  <div>
+    <!input id="mpg-min" type="text" value="0" size="10">
+    <!	input id="mpg-max" type="text" value="30" size="10">
+   <button id="update" onclick="update_map()">Find rides</button> 
+  </div> </th></tr>
+</table>
+<script src="NYC_Map2.js"></script>
+</body>
+</html>
